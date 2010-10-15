@@ -14,17 +14,15 @@
 			<th>Co řádek to faktura</th>
 			<th>checkbox pro hromadnou akci z hlavičky</th>
 			<th>rozbalovací menu nebo ikona pro akci</th>
-		</tr>
-		<tr>
-			<td>Co řádek to faktura</td>
-			<td>checkbox pro hromadnou akci z hlavičky</td>
-			<td>rozbalovací menu nebo ikona pro akci</td>
-		</tr>
-		<tr>
-			<td>Co řádek to faktura</td>
-			<td>checkbox pro hromadnou akci z hlavičky</td>
-			<td>rozbalovací menu nebo ikona pro akci</td>
-		</tr>
+		</tr>		
+		<?php foreach($prehled->fakturylist as $fak) :?>
+			<tr id="<?php echo $fak->id?>">
+				<td><?php echo $fak->cislo?></td>
+				<td>checkbox pro hromadnou akci z hlavičky</td>
+				<td>rozbalovací menu nebo ikona pro akci</td>
+			</tr>
+		<?php endforeach;?>
+		
 	</tbody>
 </table>
 <div class="clear"></div>     

@@ -9,7 +9,7 @@ class cLogsDb extends cLogs {
 	
 	public function __construct($page="") {
 		if(cLogsDb::$startLogs === false) {
-			cLogsDb::$startLogs = microtime_float();
+			cLogsDb::$startLogs = microtimeFloat();
 		}
 		cLogsDb::$fileToWrite = "logs/".getDateToPrint(mktime(),"Ymd").".txt";
 		parent::__construct("DB ".$page);

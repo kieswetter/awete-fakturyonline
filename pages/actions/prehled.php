@@ -7,7 +7,9 @@ class prehled extends cPageAction {
 	}
 	
 	private function action() {
-		/// your code goes here 
+		$list = $this->db->selectAsObjects('faktury', null, array('useracc','=',$this->CFG->getUserData('id')));
+		$this->logs->on();		
+		$this->addVar($list,"fakturylist"); 
 	}
 }
 ?>

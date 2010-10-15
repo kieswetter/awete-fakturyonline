@@ -12,7 +12,7 @@ class cCfg {
 	protected static $aUserData = array();	
 	protected static $aUserCapabilities = array();	
 	protected static $bConfSet = false; 
-	public static $logs;
+	public static $logs;	
 	
 	private static $idActiveUseraccount = null;
 	
