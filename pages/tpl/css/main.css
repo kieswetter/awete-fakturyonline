@@ -1,0 +1,392 @@
+* {
+  font-family: "Trebuchet MS";
+  font-size: 100%;
+  color: #000;
+  margin: 0;
+  padding: 0;
+  }
+body {
+  text-align: center;
+  background: url('../img/bck_header.jpg') repeat-x;
+  } 
+a, a img {
+  border: none;
+  vertical-align: middle;
+  }   
+.box {
+  width: 990px;
+  margin: auto;
+  text-align: left;
+  } 
+h1 {
+  color: #585858;
+  font-size: 130%;
+  font-weight: normal;
+  }  
+h2 {
+  color: #585858;
+  font-size: 100%;
+  font-weight: normal;
+  }  
+/*--- hlavicka ---*/
+.header { 
+  padding: 10px 0 0;
+  text-align: left;
+  height: 205px;
+  position: relative;
+  }  
+.header a { 
+  color: #fff; 
+  }
+.header a:hover { 
+  color: #fff;
+  text-decoration: none; 
+  }   
+.header .logo {
+  float: left;
+  width: 340px;
+  height: 70px; 
+  }
+.header .nav {
+  float: right;
+  /*width: 250px;*/
+  padding: 0 10px 10px 0;
+  }     
+.header .nav li {
+  display: inline;
+  list-style-type: none;
+  }      
+.header .nav li a {
+  color: #fff;
+  float: left;
+  font-size: 80%;
+  padding: 0 5px;
+  border-right: 1px dotted #fff;
+  }
+.header .nav li a.last {
+  border-right: none;
+  }  
+
+/*--- zalozky ---*/
+.zalozky {
+  margin: 0 0 0 180px;
+  position: absolute;
+  bottom: 0;
+  } 
+.zalozky a {
+  background: url('../img/bck_zal.gif') 100% -50px no-repeat;
+  height: 20px;
+  display: block;
+  float: left;
+  padding: 20px 20px 10px 20px;
+  color: #000;
+  border-left: 3px solid #fff;
+  margin: 0 2px;
+  }  
+.zalozky a:hover {
+  background: url('../img/bck_zal.gif') 100% 0 no-repeat;
+  height: 20px;
+  display: block;
+  float: left;
+  padding: 20px 20px 10px 20px;
+  color: #000;
+  border-left: 3px solid #fff;
+  margin: 0 2px;
+  }  
+.zalozky a.active {
+  background: url('../img/bck_zal.gif') 100% 0 no-repeat;
+  height: 20px;
+  display: block;
+  float: left;
+  padding: 20px 20px 10px 20px;
+  color: #E64007;
+  font-size: 120%;
+  border-left: 3px solid #fff;
+  }  
+/*--- obsah ---*/
+.obsah {
+  min-height: 150px;
+  width: 1250px;
+  margin: auto;
+  text-align: left;
+  } 
+.obsah .right_column {
+  float: right;
+  width: 340px;
+  text-align: left;
+  border: 1px solid #cbcbcb;
+  border-top: none;
+  } 
+.obsah .left_column {
+  margin: 0;
+  padding: 20px;
+  text-align: left;
+  width: 865px;
+  } 
+span.lock {
+  background: url('../img/bck_lock.gif') 0 1px no-repeat;
+  padding: 0 0 0 20px;
+  color: #E64007;
+  text-decoration: underline;
+  cursor: pointer;
+  }  
+span.unlock {
+  background: url('../img/bck_unlock.gif') 0 1px no-repeat;
+  padding: 0 0 0 20px;
+  color: #E64007;
+  text-decoration: underline;
+  cursor: pointer;
+  }
+/*--- pravy sloupec ---*/
+.obsah .right_column h2 { 
+  padding: 20px 0 10px 10px;
+  background: #eee;
+  }
+.obsah .right_column p {
+  padding: 5px 10px;
+  font-size: 70%;
+  margin: 0;
+  }  
+.obsah .right_column .note {
+  padding: 10px;
+  font-size: 80%;
+  color: #585858;
+  background: #eee; 
+  }     
+.obsah .right_column .akt{
+  background: url('../img/bck_akt.gif') 10px 5px no-repeat;
+  padding: 5px 10px 5px 30px;
+  font-size: 70%;
+  color: #585858; 
+  }
+.obsah .right_column a {
+  color: #E64007;
+  }  
+/*--- panel ---*/
+.obsah .right_column .panel {
+  float: right;
+  width: 340px;
+  } 
+
+.obsah .right_column .panel .login {
+  padding: 10px 0;
+  }
+.obsah .right_column .panel .login p {
+  color: #585858;
+  font-size: 80%;
+  } 
+.obsah .right_column .panel .login strong {
+  color: #585858;
+  font-size: 100%;
+  }
+.obsah .right_column a.nastaveni {
+  font-size: 80%;
+  float: left;
+  padding: 5px 10px;
+  }     
+/*--- kalendar ---*/
+.obsah .right_column .kalendar {
+  border-top: 1px solid #cbcbcb; 
+  padding: 20px 10px 0 10px;
+  }  
+.obsah .right_column .kalendar h2 {
+  float: left; 
+  padding: 0;
+  }  
+.obsah .right_column .kalendar .mesic {
+  float: right;
+  padding: 3px 0 0 0;
+  margin: 0;
+  position: relative;
+  width: 100px; 
+  text-align: center;
+  font-size: 90%;
+  color: #585858;
+  }  
+.obsah .right_column .kalendar .mesic a.predchozi {
+  position: absolute;
+  left: 0;
+  top: 8px; 
+  width: 4px;
+  height: 8px;
+  background: url('../img/bck_mesic.gif') 0 0 no-repeat;
+  }
+.obsah .right_column .kalendar .mesic a.dalsi {
+  position: absolute;
+  right: 0;
+  top: 8px;
+  width: 4px;
+  height: 8px; 
+  background: url('../img/bck_mesic.gif') -4px 0 no-repeat;
+  }  
+.obsah .right_column .kalendar .kal{
+  padding: 10px 0; 
+  }             
+.obsah .right_column .kalendar table {
+  border-collapse: collapse;
+  border: none;
+  width: 320px;
+  }              
+.obsah .right_column .kalendar table th,
+.obsah .right_column .kalendar table td {
+  padding: 5px;
+  text-align: center;
+  font-size: 80%;
+  }
+.obsah .right_column .kalendar table th {
+  background: #86A115;
+  color: #fff;
+  }                          
+.obsah .right_column .kalendar table td {
+  border: 1px solid #cbcbcb;
+  color: #585858;
+  }            
+.obsah .right_column .kalendar table td a {
+  color: #E64007;
+  font-weight: bold;
+  }            
+  
+    
+/*--- pravy sloupec ---*/
+.obsah .right_column h2 { 
+  padding: 20px 0 10px 10px;
+  }
+
+/*--- levz sloupec ---*/
+.obsah .left_column h1 {
+  color:#585858;
+  font-size: 140%;
+  font-weight:normal;
+  }         
+.obsah .left_column h2 {
+  color: #E64007;
+  font-size: 120%;
+  font-weight:normal;
+  }
+.obsah .left_column h3 {
+  color: #E64007;
+  font-size: 100%;
+  font-weight:normal;
+  }
+.obsah .left_column h4 {
+  color:#585858;
+  font-size: 90%;
+  font-weight:normal;
+  }
+.obsah .left_column p {
+  color: #585858;
+  font-size: 90%;
+  font-weight: normal;
+  padding: 5px 0;
+  margin: 0;
+  } 
+.obsah .left_column ul {
+  margin: 10px 20px;
+  padding: 0;
+  }
+.obsah .left_column ul li {
+  list-style-type: circle;
+  color: #E64007;
+  font-size: 90%;
+  font-weight: normal;
+  padding: 3px 0;
+  margin: 0;
+  }
+.obsah .left_column table.obecna {
+  border-collapse: collapse;
+  border: none;
+  width: 100%;
+  }     
+.obsah .left_column table.obecna th {
+  padding: 5px;
+  background: #E64007;
+  font-size: 80%;
+  color: #fff;
+  }
+.obsah .left_column table.obecna td {
+  padding: 5px;
+  border-bottom: 1px solid #ddd;
+  font-size: 80%;
+  }                
+/*--- footer ---*/
+.footer {
+  background: url('../img/bck_footer.jpg') repeat-x;
+  height: 75px;
+  padding: 10px;
+  text-align: right; 
+  }
+.footer .nav {
+  text-align: right;
+  }     
+.footer .nav li {
+  display: inline;
+  list-style-type: none;
+  }      
+.footer .nav li a {
+  color: #fff;
+  float: right;
+  font-size: 80%;
+  padding: 0 5px;
+  border-right: 1px dotted #fff;
+  }
+.footer .nav li a:hover {
+  color: #fff;
+  float: right;
+  font-size: 80%;
+  padding: 0 5px;
+  text-decoration: none;
+  border-right: 1px dotted #fff;
+  }  
+.footer .nav li a.last {
+  border-right: none;
+  }  
+
+.footer .awete {
+  font-size: 80%;
+  padding: 5px 0;
+  color: #fff;
+  }
+
+a.odd_item span, 
+a#add_item span,
+a.edit_item span,
+a#submit_item span {
+  display: none;
+  }
+a.odd_item {
+  background: url('../img/minus.gif') 0 1px no-repeat;
+  padding: 0 0 0 15px;
+  line-height: 20px;
+  margin: 0 1px;
+  }  
+a#add_item {
+  background: url('../img/plus.gif') 0 1px no-repeat;
+   padding: 0 0 0 15px;
+  line-height: 20px;
+  margin: 0 1px;
+  }   
+a.edit_item {
+  background: url('../img/edit.gif') 0 1px no-repeat;
+  padding: 0 0 0 15px;
+  line-height: 20px;
+  margin: 0 1px;
+  }   
+a#submit_item {
+  background: url('../img/ok.gif') 0 1px no-repeat;
+  padding: 0 0 0 15px;
+  line-height: 20px;
+  margin: 0 1px;
+  } 
+th.icons,
+td.icons {
+  width: 60px !important;
+  text-align: right !important;
+  }        
+
+/*--- obecne --*/  
+.clear {
+  font-size: 0;
+  line-height: 0;
+  clear: both;
+  height: 0;
+  }   

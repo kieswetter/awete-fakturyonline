@@ -1,0 +1,162 @@
+.nastaveni_app,
+.nastaveni_fakturace {
+  border: 1px solid #DDDDDD;
+  }
+
+
+
+.firemni_udaje,
+.kontaktni_udaje {
+  border: 1px solid #DDDDDD;
+  float: left;
+  width: 49%;  
+  }
+.firemni_udaje {
+  float: right;
+  }  
+
+
+form {
+  
+  }
+.nastaveni {
+  min-width: 740px;
+  text-align: left;
+  border: none;
+  color: #585858;
+  } 
+.nastaveni .f_header { padding: 10px; height: 100px; }  
+.nastaveni .f_header a { 
+  color: #DA251D; 
+  }
+.nastaveni .f_header a:hover { 
+  color: #DA251D;
+  text-decoration: none; 
+  }   
+.nastaveni .f_header .logo {
+  float: left;
+  width: 250px;
+  height: 100px; 
+  }
+.nastaveni .f_header .adresa {
+  border-right:1px solid #CCCCCC;
+  float:right;
+  font-size:70%;
+  margin-right:20px;
+  padding-right:15px;
+  width:135px;
+  }     
+.nastaveni .f_header .kontakty {
+  float: right;
+  width: 230px;
+  font-size: 70%;
+  }  
+.nastaveni h1 {
+  padding: 10px;
+  margin: 0 0 10px 0;
+  background: #86A115;
+  color: #fff;
+  }
+.nastaveni h1 span {
+  color: #fff;
+  font-size: 120%;
+  }  
+.inbox {
+  padding: 10px;
+  }
+.inbox h2 {
+  padding: 10px;
+  background: #ddd;
+  margin: 0;
+  
+  } 
+/*--- inbox obecne ---*/  
+.inbox table {
+  border-collapse: collapse;
+  border: none;
+  margin: 10px 5px;
+  }      
+.inbox table th {
+  text-align: left;
+  font-size: 80%;
+  }      
+.inbox table td {
+  text-align: left;
+  font-size: 80%;
+  }  
+/*-- obecna tabulka a inputy --*/  
+.inbox table th {
+  width: 130px;
+  padding: 5px;
+  }
+.inbox table td table td {
+  padding: 5px;
+  }
+.inbox input {
+  border: 1px solid #ccc;
+  width: 250px;
+  height: 20px;
+  font-size: 12px;
+  background: url('../img/bck_input.gif') 0 100% repeat-x;
+  }
+.inbox select {
+  border: 1px solid #ccc;
+  width: 150px;
+  height: 20px;
+  font-size: 12px;
+  }  
+.inbox input.radio{
+  border: none;
+  width: 15px;
+  height: auto;
+  }  
+/*--- tabulka nastaveni app a faktury --*/
+.nastaveni_app table,
+.nastaveni_fakturace table {}
+.nastaveni_app table th,
+.nastaveni_fakturace table th { width: 250px;}
+.nastaveni_app table td input,
+.nastaveni_fakturace table td input { width: 250px;}
+.nastaveni_app table td select,
+.nastaveni_fakturace table td select { width: 250px;}
+.nastaveni_app table td textarea,
+.nastaveni_fakturace table td textarea { width: 400px; border: 1px solid #ccc;}
+.note {
+  display: block;
+  font-size: 11px;
+  padding: 2px 0 10px 0;
+  color: #86A115; 
+  }
+
+
+.buttony {
+  text-align: center;
+  margin: 20px 0;
+  min-width: 740px;
+  } 
+.buttony button {
+  text-align: center;
+  background: #86A115;
+  color: #fff;
+  padding: 3px;
+  border: none;
+  margin: 0 5px;
+  } 
+#lockDatumSplatnosti img {  
+  vertical-align: middle;
+  }
+.error, .error_msg, 
+ tr.error_msg td {
+  color: red;
+  display: block;
+  font-size: 10px;
+ }     
+.clear {
+  clear: both;
+  font-size: 0;
+  line-height: 0;
+  height: 0;
+  }
+.lock{      
+  background-color: yellow;      
+ }        

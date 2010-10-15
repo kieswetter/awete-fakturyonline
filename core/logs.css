@@ -1,0 +1,65 @@
+._logs pre {
+	padding: 0;
+	margin: 0;	
+}
+	
+._logtitle._error {
+	background-color: #F00 !important;
+}
+
+._log._error {
+	background-color: #F55 !important;
+}
+
+._logs {
+	width: 100%;
+	text-align: left;
+	background-color: #EEE;
+}
+
+
+._logs_page {
+	border: 1px solid black;
+}
+
+._log_pagetitle {
+	font-weight: bold;
+	font-size: 16px;
+	background-color: #AAF;
+}
+
+._logtitle {
+	font-style: italic;
+	background-color: #CCC;
+	border-top: 1px solid black;	
+}
+._logtitle._dbLog {
+	background-color: #AFA;
+}
+._logtitle._vars {
+	background-color: #F88;
+}
+
+._log {
+	background-color: #EEE;	
+}
+._log._dbLog {
+	background-color: #EFE;
+}
+._log._vars {
+	background-color: #FCC;	
+}
+
+._log_title {
+	font-style: italic;
+}
+
+._log_parent {
+	margin-left: 50px;
+}
+._log_parent.first{
+	margin-left: 0px;
+}
+._log_final {
+	margin-left: 0px;
+}

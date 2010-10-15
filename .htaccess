@@ -1,0 +1,19 @@
+############################################################
+### Replace all applearences of 'http:://localhost/_core_' by your domain
+### Replace all appearences of '_core_' by your default folder
+############################################################
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !/fakturyonline/index.php
+RewriteCond %{REQUEST_URI} !/fakturyonline/admin
+RewriteCond %{REQUEST_URI} !(.*)/$
+RewriteRule ^(.*)$ http://localhost/fakturyonline/$1/ [L,R=301]
+
+RewriteCond %{REQUEST_URI} !/fakturyonline/admin  
+RewriteRule ^(.*)/$ /fakturyonline/index.php?_pageAction_=$1 [L,QSA]
+
+RewriteCond %{HTTP_HOST} ^localhost/fakturyonline 
+RewriteRule ^(.*)$ http://localhost/fakturyonline/$1 [R=301,QSA]
+

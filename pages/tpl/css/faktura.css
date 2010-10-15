@@ -1,0 +1,208 @@
+form {
+  
+  }
+.faktura {
+  min-width: 740px;
+  text-align: left;
+  border: none;
+  color: #585858;
+  } 
+.faktura .f_header { padding: 10px; height: 100px; }  
+.faktura .f_header a { 
+  color: #DA251D; 
+  }
+.faktura .f_header a:hover { 
+  color: #DA251D;
+  text-decoration: none; 
+  }   
+.faktura .f_header .logo {
+  float: left;
+  width: 250px;
+  height: 100px; 
+  }
+.faktura .f_header .adresa {
+  border-right:1px solid #CCCCCC;
+  float:right;
+  font-size:70%;
+  margin-right:20px;
+  padding-right:15px;
+  width:135px;
+  }     
+.faktura .f_header .kontakty {
+  float: right;
+  width: 230px;
+  font-size: 70%;
+  }  
+.faktura h1 {
+  padding: 10px;
+  margin: 0 0 10px 0;
+  background: #86A115;
+  color: #fff;
+  }
+.faktura h1 span {
+  color: #fff;
+  font-size: 120%;
+  }  
+.inbox {
+  padding: 10px;
+  }
+.inbox h2 {
+  padding: 10px;
+  background: #ddd;
+  margin: 0;
+  
+  } 
+/*--- inbox obecne ---*/  
+.inbox table {
+  border-collapse: collapse;
+  border: none;
+  margin: 10px 5px;
+  }      
+.inbox table th {
+  text-align: left;
+  font-size: 80%;
+  }      
+.inbox table td {
+  text-align: left;
+  font-size: 80%;
+  }  
+  
+/*--- oberatel / dodavatel ---*/  
+   
+.inbox .odberatel {
+  float: right;
+  border: 1px solid #ddd;
+  width: 39%;
+  }
+.inbox .dodavatel,
+.inbox .info_splatnost {
+  float: left;
+  border: 1px solid #ddd;
+  width: 59%;
+  }
+.inbox .info_splatnost th {
+   width: 200px;
+  }
+.inbox .info_splatnost th span {
+   font-size: 80%;
+   color: #585858;
+   display: block;
+   font-weight: normal;
+  }
+.inbox table th {
+  width: 80px;
+  padding: 5px;
+  }
+.inbox table td table td {
+  padding: 5px;
+  }
+.inbox input {
+  border: 1px solid #ccc;
+  width: 150px;
+  height: 20px;
+  font-size: 12px;
+  background: url('../img/bck_input.gif') 0 100% repeat-x;
+  }
+.inbox select {
+  border: 1px solid #ccc;
+  width: 150px;
+  height: 20px;
+  font-size: 12px;
+  }  
+.inbox input.radio{
+  border: none;
+  width: 15px;
+  }  
+.inbox input.dod_soud_misto { width: 100px; }
+.inbox input.dod_soud_spis { width: 50px; }
+
+/*--- info o fakture ---*/
+.info_fakturace {
+  margin: 10px 0 0 0;
+  }
+.info_fakturace table {
+  width: 100%;
+  
+  }
+.info_fakturace table th {
+  /*width: 300px; */
+  }
+
+
+.info_fakturace table#list_of_items {
+  
+  }
+.info_fakturace table#list_of_items th {
+  border-bottom: 1px solid #ccc;
+  font-size: 11px;
+  padding: 3px 0;
+  /*text-align: right !important;*/
+  }
+.info_fakturace table#list_of_items td {
+  border-bottom: 1px solid #ccc;
+  font-size: 11px;
+  padding: 3px 0;
+  }
+.info_fakturace table#list_of_items th span,
+.info_fakturace table#list_of_items td span {
+  margin: 0 2px;
+  }    
+.info_fakturace table#list_of_items input {
+  width: 140px;
+  height: 20px;
+  background: url('../img/bck_input.gif') 0 100% repeat-x;
+  }
+.info_fakturace table#list_of_items .cislo { width: 50px; text-align: left !important; }
+.info_fakturace table#list_of_items .popis { width: 300px; text-align: left !important; }
+.info_fakturace table#list_of_items .popis input { width: 300px; text-align: left !important; }
+.info_fakturace table#list_of_items .pocet { width: 50px; text-align: right !important;}
+.info_fakturace table#list_of_items .pocet input {width: 50px; text-align: right !important;}
+.info_fakturace table#list_of_items .cena { width: 90px; text-align: right !important; }
+.info_fakturace table#list_of_items .cena input { width: 80px; text-align: right !important; }
+.info_fakturace table#list_of_items .dph_hid { width: 60px;  text-align: right !important;}
+.info_fakturace table#list_of_items .dph_hid select { width: 50px;  text-align: right !important;}
+.info_fakturace table#list_of_items .cena_pol { width: 100px;  text-align: right !important;}
+
+.info_fakturace table#list_of_complete th {
+  width: 515px;
+  text-align: right !important;
+  }            
+.info_fakturace table#list_of_complete th,
+.info_fakturace table#list_of_complete td {
+  text-align: right;
+  }          
+.info_fakturace table#list_of_complete td#complete_cenadph {
+  font-weight: bold;
+  font-size: 20px;
+  }
+.buttony {
+  text-align: center;
+  margin: 20px 0;
+  min-width: 740px;
+  } 
+.buttony button {
+  text-align: center;
+  background: #86A115;
+  color: #fff;
+  padding: 3px;
+  border: none;
+  margin: 0 5px;
+  } 
+#lockDatumSplatnosti img {  
+  vertical-align: middle;
+  }
+.error, .error_msg, 
+ tr.error_msg td {
+  color: red;
+  display: block;
+  font-size: 10px;
+ }     
+.clear {
+  clear: both;
+  font-size: 0;
+  line-height: 0;
+  height: 0;
+  }
+ .lock{      
+  background-color: yellow;      
+ }        
