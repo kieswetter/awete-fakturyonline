@@ -237,6 +237,8 @@ function _showRoles(){
 		<tr>
 			<td>Name</td>
 			<td>Parent role</td>
+			<td>Description</td>
+			<td>Sort</td>
 			<td>Edit</td>
 		</tr>
 		</thead>
@@ -247,6 +249,8 @@ function _showRoles(){
 				<td><?php $parent = arraySearch($role['parentid'],$roles,'id');?>					
 					<?php if($parent !== false)print $roles[$parent]['name']; ?>
 				</td>
+				<td><?php print $role['description']?></td>
+				<td><?php print $role['sort']?></td>
 				<td>
 					<a href="<?php getUrl('admin')?>?action=editroles&id=<?php print $role['id'];?>">edit</a>
 				</td>
@@ -295,10 +299,7 @@ function _showUsers(){
 function _showCapabilities() {
 	global $Logs;
 	$data = admin_getAllCapabWithRights();
-	$roles = admin_getAllRoles();
- 
-	$Logs->addLog($data,"admin_getAllCapabWithRoles");
-	$Logs->addLog($roles,"admin_getAllRoles");
+	$roles = admin_getAllRoles();		
 ?>
 	<h3>Edit capabilities</h3>
 	<form action="?show=capa" name="fc_capabilities" method="post">

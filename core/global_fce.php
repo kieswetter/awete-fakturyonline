@@ -200,6 +200,68 @@ function arraySearch($needle,$haystack,$arraykey=false)
   return false;
 }
 
+/**
+ * Add quotes to HTML characters
+ *
+ * Returns $var with HTML characters (like "<", ">", etc.) properly quoted.
+ * This function is very similar to {@link p()}
+ *
+ * @param string $var the string potentially containing HTML characters
+ * @param boolean $strip to decide if we want to strip slashes or no. Default to false.
+ *                true should be used to print data from forms and false for data from DB.
+ * @return string
+ */
+function format_string($var, $strip=false) {
+
+    if ($var === '0' or $var === false or $var === 0) {
+        return '0';
+    }
+
+    if ($strip) {
+        return preg_replace("/&amp;(#\d+);/i", "&$1;", htmlspecialchars(stripslashes_safe($var)));
+    } else {
+        return preg_replace("/&amp;(#\d+);/i", "&$1;", htmlspecialchars($var));
+    }
+}
+
+/**
+ * Moodle replacement for php stripslashes() function,
+ * works also for objects and arrays.
+ *
+ * The standard php stripslashes() removes ALL backslashes
+ * even from strings - so  C:\temp becomes C:temp - this isn't good.
+ * This function should work as a fairly safe replacement
+ * to be called on quoted AND unquoted strings (to be sure)
+ *
+ * @param mixed something to remove unsafe slashes from
+ * @return mixed
+ */
+function stripslashes_safe($mixed) {
+    // there is no need to remove slashes from int, float and bool types
+    if (empty($mixed)) {
+        //nothing to do...
+    } else if (is_string($mixed)) {
+        if (ini_get_bool('magic_quotes_sybase')) { //only unescape single quotes TODO
+            $mixed = str_replace("''", "'", $mixed);
+        } else { //the rest, simple and double quotes and backslashes
+            $mixed = str_replace("\\'", "'", $mixed);
+            $mixed = str_replace('\\"', '"', $mixed);
+            $mixed = str_replace('\\\\', '\\', $mixed);
+        }
+    } else if (is_array($mixed)) {
+        foreach ($mixed as $key => $value) {
+            $mixed[$key] = stripslashes_safe($value);
+        }
+    } else if (is_object($mixed)) {
+        $vars = get_object_vars($mixed);
+        foreach ($vars as $key => $value) {
+            $mixed->$key = stripslashes_safe($value);
+        }
+    }
+
+    return $mixed;
+}
+
 function microtimeFloat()
 {
     list($usec, $sec) = explode(" ", microtime());

@@ -128,7 +128,7 @@ function admin_getTempData($id) {
 }
 
 function admin_getAllRoles() {	
-	$aData = cDb::select('core_roles',	'*');
+	$aData = cDb::select('core_roles','*',null,'sort');
 	if(is_array($aData)){
 		return $aData; 
 	}

@@ -145,7 +145,7 @@ class cDb {
 	  	if(is_array($aOrder) && count($aOrder)){
 	    	$order = db_getOrder($aOrder);
 	  	}else if(!is_null($aOrder)){
-	    	$order = "order by $aOrder";
+	    	$order = "ORDER by $aOrder";
 	  	}
 	  
 	  	$query = "SELECT $cols FROM $table $where $order";
@@ -180,6 +180,76 @@ class cDb {
 	    	cDb::$logs->addLog($query,$msg,$class." _error");	    	
 	    	return false;
 	  	}
+	}
+
+/**
+	 * make a select query and returns result as an objects contains one row
+	 * @param string/array $aTable - name of table for single table or array for join:
+	 * 				array('tab1',array('col','typeOfJoin(LEFT)'),'tab2') = tab1 left join tab2 using(col) or 
+	 * 				array('tab1',array('tab1.col','=','tab2.col','typeOfJoin'),'tab2',array(tab2.col, '=','tab3.col', typeOfJoin), 'tab3',...)
+	 * @param string/array $aCols - col or array(col,col,...); null means * 
+	 * @param array $aWhere - array(col,operator[=,LIKE,..],value) or array(array,operator[AND,OR],array)
+	 * @param array $aOrder - array(col,col,...); it is possible to use 'DESC col'
+	 * @return object/boolean - if success returns object of result of mysql select query otherwise false 
+	 */ 
+	public function selectOne($aTable, $aCols=null, $aWhere=null, $aOrder=null) {
+	 	//$conn = dbConnect();
+	  
+	  	$table = self::db_getTable($aTable);
+	  	$aCols = (is_null($aCols)) ? '*' : $aCols;
+	  	$where = "";
+	  	$order = "";
+	  
+	  	if($aWhere) {
+	    	$where = "WHERE ".self::db_getWhere($aWhere,true);
+	  	}
+	  	if(is_string($aCols)){
+	  		$cols = $aCols;
+	  	} else if(is_array($aCols)){
+	    	$cols = implode(",",$aCols);//db_getCols($aCols);
+	  	} else {	  	
+	  		$msg = __CLASS__.": ".__FUNCTION__.": unsupported format of \$aCols";
+	  		if(is_object($this)){
+	  			$msg = get_class($this).": ".$msg;
+	  		}
+	  		cDb::$logs->addLog($query,$msg,cDb::$logClass." _error");
+	  		return false;
+	  	}
+	  
+	  	if(is_array($aOrder) && count($aOrder)){
+	    	$order = db_getOrder($aOrder);
+	  	}else if(!is_null($aOrder)){
+	    	$order = "ORDER by $aOrder";
+	  	}
+	  
+	  	$query = "SELECT $cols FROM $table $where $order LIMIT 1";	  	
+	    	
+	  	$class = cDb::$logClass;
+	  	$msg = __CLASS__.": ".__FUNCTION__;
+		if(is_object($this)){
+		  	$msg = get_class($this).": ".$msg;
+		}
+		
+	  	try{
+	    	if(!$res = mysql_query($query)){
+	    		throw new cException();
+	    	}
+	    	$result = mysql_fetch_object($res);
+	      		
+	  		cLogsDb::addFileLog($query);
+		  	if(is_object($this) && is_object($this->logs) && get_class($this) != 'cDb'){
+				$this->logs->addLog($query,$msg,$class);
+			}else{
+				cDb::$logs->addLog($query,$msg,$class);
+			}			
+	    	mysql_free_result($res);
+	    	return $result;	    	
+	  	}catch (cException $e) {
+	    	$query = $e->getDbMessageError(__METHOD__.'(line:'.__LINE__.')',$query);
+	    	cLogsDb::addFileLog($query);
+	    	cDb::$logs->addLog($query,$msg,$class." _error");	    	
+	    	return false;
+	  	}	  	
 	}
 	
 /**
